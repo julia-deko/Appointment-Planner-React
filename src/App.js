@@ -46,6 +46,18 @@ function App() {
   contacts and appointments
   */
 
+  const addContact = (contact) => {
+    setContacts((prev) => {
+      return [contact, ...prev]
+    });
+  }
+
+  const addAppointment = (appointment) => {
+    setAppointments((prev) => {
+      return [appointment, ...prev]
+    });
+  }
+
   return (
     <>
       <nav>
@@ -63,11 +75,11 @@ function App() {
           </Route>
           <Route path={ROUTES.CONTACTS}>
              {/* Add props to ContactsPage */}
-            <ContactsPage />
+            <ContactsPage contacts={contacts} addContact={addContact} />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage />
+            <AppointmentsPage appointments={appointments} addAppointment={addAppointment} />
           </Route>
         </Switch>
       </main>

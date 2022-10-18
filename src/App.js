@@ -23,16 +23,16 @@ function App() {
 
   const [appointments, setAppointments] = useState([
     {
-      title: 'Meeting with Jennie',
+      title: 'Meeting',
       date: '17.05',
       time: '11.00',
-      personContact: '5639475'
+      personContact: 'Jennie'
     },
     {
-      title: 'Lunch with James',
+      title: 'Lunch',
       date: '12.05',
       time: '14.00',
-      personContact: '4847502'
+      personContact: 'James'
     }
   ]);
  
@@ -79,7 +79,7 @@ function App() {
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
-            <AppointmentsPage appointments={appointments} addAppointment={addAppointment} />
+            <AppointmentsPage appointments={appointments} addAppointment={addAppointment} contacts={contacts} />
           </Route>
         </Switch>
       </main>
